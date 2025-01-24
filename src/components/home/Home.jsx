@@ -1,27 +1,54 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Home.css'; 
-import Profile from '../../assets/profile.jpg';
+import { getUser, getProfilePicture } from '../../api/Api.jsx'; 
+import defaultProfile from '../../assets/profile.jpg'; 
 
 const Home = () => {
-  const skills = {
-    "Programming Languages": ["Python", "C", "Java"],
-    "Web Development": ["HTML", "CSS", "JavaScript"],
-    Databases: ["PostgreSQL"],
-    Frameworks: ["Spring Boot", "React"],
-  };
+  const [user, setUser] = useState(null);
+  const [skills, setSkills] = useState({});
+  const [profilePicture, setProfilePicture] = useState(null); // State for profile picture
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const userId = 1; // Hardcoded for now, replace with dynamic ID if needed
+        const userData = await getUser(userId);
+        setUser(userData);
+
+        // Fetch the profile picture after user data
+        const picture = await getProfilePicture(userId);
+        setProfilePicture(picture); // Set the profile picture
+
+        setSkills({
+          "Programming Languages": userData.programmingLanguages || [],
+          "Web Development": userData.webDevelopment || [],
+          Databases: userData.databases || [],
+          Frameworks: userData.frameworks || [],
+        });
+      } catch (error) {
+        console.error('Error fetching user data:', error);
+      }
+    };
+
+    fetchUserData();
+  }, []);
 
   return (
     <div className="home-page">
       <header className="header">
         <div className="intro">
-          <h1 className="name">Hi, I'm Smera Tharakan</h1>
+          <h1 className="name">Hi, I'm {user?.name || 'Loading...'}</h1>
           <p className="bio">
-            Passionate and motivated software developer currently working as an
-            Associate Software Developer.
+            {user?.bio ||
+              'Passionate and motivated software developer currently working as an Associate Software Developer.'}
           </p>
         </div>
         <div className="profile">
-          <img src={Profile} alt="Profile" className="profile-pic" />
+          <img
+            src={profilePicture ? `data:image/jpeg;base64,${profilePicture}` : defaultProfile}
+            alt="Profile"
+            className="profile-pic"
+          />
         </div>
       </header>
 
