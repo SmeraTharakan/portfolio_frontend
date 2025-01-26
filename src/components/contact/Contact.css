@@ -1,0 +1,95 @@
+.contact-container {
+  padding: 70px 250px;
+  background-color: #ffffff;
+  height: auto;
+  margin: 0;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  color: #6a5acd; /* Purple color */
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.connect-with-me-title {
+  font-size: 1.8rem;
+  color: #333; /* Dark text */
+  margin-bottom: 20px;
+  font-weight: bold; /* Bold for the title */
+  text-align: left;
+}
+
+.contact-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+label {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333; /* Dark text */
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  background-color: #f9f9f9;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #6a5acd; /* Purple focus border */
+  box-shadow: 0 0 5px rgba(106, 92, 205, 0.5); /* Purple glow on focus */
+}
+
+textarea {
+  resize: none;
+  height: 120px;
+}
+
+.submit-button {
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  color: #fff;
+  background-color: #6a5acd; /* Purple button */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 200px;
+  align-self: flex-start;
+}
+
+.submit-button:hover {
+  background-color: #5b4bb5; /* Darker purple on hover */
+}
+
+.success-message {
+  margin-top: 20px;
+  color: #28a745;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+}
