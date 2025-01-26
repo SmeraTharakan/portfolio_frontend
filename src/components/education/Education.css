@@ -1,0 +1,86 @@
+.education-timeline-container {
+    padding: 70px 250px;
+    background-color: #f4f4f9;
+    height: auto;
+  }
+  
+  .education-title {
+    font-size: 2.5rem;
+    color: #6a5acd;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .timeline {
+    position: relative;
+    margin: 0 auto;
+    padding: 20px 0;
+    max-width: 900px;
+  }
+  
+  .timeline-line {
+    position: absolute;
+    left: 10%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #6a5acd;
+    transform: translateX(-50%);
+  }
+  
+  .timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    position: relative;
+  }
+  
+  .timeline-circle {
+    position: absolute;
+    left: 10%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: #6a5acd;
+    border: 4px solid #ffffff;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+  .timeline-content {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%; /* Adjust width for education info */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin-left: 20px; /* Space between the year and content */
+  }
+  
+  .timeline-year {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #6a5acd;
+    margin-bottom: 10px;
+    width: 100px;
+    text-align: left; /* Align year to the left */
+  }
+  
+  .timeline-degree {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .timeline-institute {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .timeline-description {
+    font-size: 1rem;
+    color: #777;
+    line-height: 1.5;
+  }
+  

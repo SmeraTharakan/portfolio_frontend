@@ -1,25 +1,81 @@
-
 .about-me-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 70px 250px;
   background-color: #ffffff;
-  height: 900px;
-  text-align: justify;
+  height: auto;
+  margin: 0;
 }
 
-.about-me-container h2 {
+.about-me-title {
   font-size: 2.5rem;
-  color: #28a745; 
+  color: #6a5acd; 
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.about-me-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; 
+  gap: 20px; /* Adds space between left and right sections */
+}
+
+.about-me-left {
+  flex: 1; /* Takes available space but respects the right-side content */
+}
+
+.about-me-right {
+  flex: none; /* Ensures it only takes the required width */
+}
+
+.about-me-heading {
+  font-size: 1.8rem;
+  color: #333;
   margin-bottom: 20px;
 }
 
-.about-me-container p {
-  font-size: 1.2rem;
-  color: #555; 
-  line-height: 1.6;
-  max-width: 60%;
+.profile-summary {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  text-align: justify;
+  width: 70%; 
 }
 
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: auto; /* Automatically adjusts to the content */
+}
 
+.skill-category {
+  margin-bottom: 20px;
+}
+
+.skill-category-name {
+  font-size: 1.4rem;
+  color: #6a5acd;
+  margin-bottom: 10px;
+}
+
+.skill-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.skill-card {
+  background-color: #fff;
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  font-weight: bold;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}

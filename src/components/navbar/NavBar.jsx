@@ -1,28 +1,12 @@
-import React, { useState, useEffect } from "react";
-import "./NavBar.css"; // Assuming you'll add styles here
+import React from "react";
+import { Link } from "react-scroll"; // Import from react-scroll
+import "./NavBar.css";
 
 const NavBar = () => {
-  const [activeLink, setActiveLink] = useState(""); // Store the active link
-
-  // Function to check the current active section
-  const handleActiveLink = () => {
-    const currentHash = window.location.hash;
-    setActiveLink(currentHash); // Set the active link to the current hash in the URL
-  };
-
-  // Listen for hash changes and update active link
-  useEffect(() => {
-    handleActiveLink(); // Initial check on page load
-    window.addEventListener("hashchange", handleActiveLink); // Listen for hash changes
-    return () => {
-      window.removeEventListener("hashchange", handleActiveLink); // Clean up event listener
-    };
-  }, []);
-
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
       <div className="container">
-        <a href="#home" className="navbar-brand">
+        <a href="/" className="navbar-brand">
           <span className="first-name">Smera</span>
           <span className="last-name">Tharakan</span>
         </a>
@@ -40,52 +24,54 @@ const NavBar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <a
-                href="#home"
-                className={`nav-link ${activeLink === "#home" ? "active" : ""}`}
+              <Link
+                className="nav-link"
+                to="home"
+                smooth={true}
+                duration={500}
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a
-                href="#aboutme"
-                className={`nav-link ${activeLink === "#aboutme" ? "active" : ""}`}
+              <Link
+                className="nav-link"
+                to="aboutme"
+                smooth={true}
+                duration={500}
               >
                 About Me
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a
-                href="#skills"
-                className={`nav-link ${activeLink === "#skills" ? "active" : ""}`}
-              >
-                Skills
-              </a>
-            </li>
-            <li className="nav-item">
-              <a
-                href="#education"
-                className={`nav-link ${activeLink === "#education" ? "active" : ""}`}
+              <Link
+                className="nav-link"
+                to="education"
+                smooth={true}
+                duration={500}
               >
                 Education
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a
-                href="#projects"
-                className={`nav-link ${activeLink === "#projects" ? "active" : ""}`}
+              <Link
+                className="nav-link"
+                to="projects"
+                smooth={true}
+                duration={500}
               >
                 Projects
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a
-                href="#contactme"
-                className={`nav-link ${activeLink === "#contactme" ? "active" : ""}`}
+              <Link
+                className="nav-link"
+                to="contactme"
+                smooth={true}
+                duration={500}
               >
                 Contact Me
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

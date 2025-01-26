@@ -71,7 +71,7 @@ export const getAllSkills = async () => {
 
 export const getAllEducation = async () => {
   try {
-    const response = await api.get("/education");
+    const response = await api.get("/educations");
     return response.data;
   } catch (error) {
     console.error("Error fetching education:", error);
