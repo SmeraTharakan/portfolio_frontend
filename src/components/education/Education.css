@@ -1,7 +1,7 @@
 .education-timeline-container {
     padding: 70px 250px;
     background-color: #f4f4f9;
-    height: auto;
+    height: 908px;
   }
   
   .education-title {
@@ -60,7 +60,7 @@
   .timeline-year {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #6a5acd;
+    color: #28a745;
     margin-bottom: 10px;
     width: 100px;
     text-align: left; /* Align year to the left */

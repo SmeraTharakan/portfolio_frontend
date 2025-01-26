@@ -41,7 +41,7 @@ const ProjectDetails = () => {
 
   return (
     <div className="project-details-container">
-      <h2 className="project-title">{project.title}</h2>
+      <h2 className="projectd-title">{project.title}</h2>
 
       <div className="project-main-content">
         <div className="project-description-container">

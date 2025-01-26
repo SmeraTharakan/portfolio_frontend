@@ -1,53 +1,57 @@
 .projects-container {
-    padding: 70px 250px;
-    background-color: #f9f9f9;
-    height: auto;
-  }
-  
-  .projects-title {
-    font-size: 2.5rem;
-    color: #6a5acd;
-    margin-bottom: 50px;
-    text-align: center;
-  }
-  
-  .projects-cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
-  }
-  
-  .project-card {
-    background-color: #ffffff;
-    width: 500px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
-  .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  }
-  
-  .project-title {
-    font-size: 1.6rem;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  .project-brief {
-    font-size: 1rem;
-    color: #777;
-    line-height: 1.5;
-    height: 145px;
-    overflow: hidden;
-  }
-  
-  .project-card:hover .project-brief {
-    height: auto;
-  }
-  
+  padding: 70px 250px;
+  background-color: #f9f9f9;
+  height: 908px;
+}
+
+.projects-title {
+  font-size: 2.5rem;
+  color: #6a5acd;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.projects-cards-container {
+  display: flex;
+  flex-wrap: nowrap; /* Ensures all cards stay in a single row */
+  gap: 60px;
+  justify-content: center; /* Centers the cards horizontally */
+  align-items: center;
+  overflow-x: auto;
+  height: 670px;
+}
+
+.project-card {
+  background-color: #ffffff;
+  width: 500px; /* Set width for uniform card sizes */
+  height: 400px; /* Set height for uniform card sizes */
+  padding: 60px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project-title {
+  font-size: 1.8rem;
+  color: #28a745; 
+  margin-bottom: 20px;
+}
+
+.project-brief {
+  font-size: 1rem;
+  color: #777;
+  line-height: 1.5;
+  height: 145px;
+  overflow: hidden;
+  text-align: justify;
+}
+
+.project-card:hover .project-brief {
+  height: auto;
+}

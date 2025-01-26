@@ -1,7 +1,7 @@
 .contact-container {
   padding: 70px 250px;
   background-color: #ffffff;
-  height: auto;
+  height: 908px;
   margin: 0;
 }
 
@@ -14,10 +14,11 @@
 
 .connect-with-me-title {
   font-size: 1.8rem;
-  color: #333; /* Dark text */
+  color: #28a745; /* Dark text */
   margin-bottom: 20px;
   font-weight: bold; /* Bold for the title */
   text-align: left;
+  font-family: 'Arial', sans-serif; /* Match font family */
 }
 
 .contact-description {
@@ -26,6 +27,7 @@
   color: #555;
   text-align: left;
   margin-bottom: 30px;
+  font-family: 'Arial', sans-serif; /* Match font family */
 }
 
 .contact-form {
@@ -45,6 +47,7 @@ label {
   margin-bottom: 5px;
   font-weight: bold;
   color: #333; /* Dark text */
+  font-family: 'Arial', sans-serif; /* Match font family */
 }
 
 input,
@@ -56,6 +59,7 @@ textarea {
   border-radius: 5px;
   outline: none;
   background-color: #f9f9f9;
+  font-family: 'Arial', sans-serif; /* Match font family */
 }
 
 input:focus,
@@ -73,13 +77,14 @@ textarea {
   padding: 12px 25px;
   font-size: 1.1rem;
   color: #fff;
-  background-color: #6a5acd; /* Purple button */
+  background-color: #28a745; /* Purple button */
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   width: 200px;
   align-self: flex-start;
+  font-family: 'Arial', sans-serif; /* Match font family */
 }
 
 .submit-button:hover {
@@ -92,4 +97,5 @@ textarea {
   font-size: 1.1rem;
   font-weight: bold;
   text-align: center;
+  font-family: 'Arial', sans-serif; /* Match font family */
 }

@@ -1,36 +1,36 @@
 .about-me-container {
   padding: 70px 250px;
   background-color: #ffffff;
-  height: auto;
+  height: 908px;
   margin: 0;
 }
 
 .about-me-title {
   font-size: 2.5rem;
   color: #6a5acd; 
-  margin-bottom: 50px;
   text-align: center;
 }
 
 .about-me-content {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start; 
-  gap: 20px; /* Adds space between left and right sections */
+  flex-direction: column; /* Stack profile summary and skills */
+  align-items: center; 
 }
 
 .about-me-left {
-  flex: 1; /* Takes available space but respects the right-side content */
+  flex: 1;
 }
 
 .about-me-right {
-  flex: none; /* Ensures it only takes the required width */
+  flex: 1;
+  width: 100%; /* Take full width to align skills properly */
 }
 
 .about-me-heading {
   font-size: 1.8rem;
-  color: #333;
-  margin-bottom: 20px;
+  color: #28a745;
+  margin-bottom: 40px;
+  margin-top: 80px;
 }
 
 .profile-summary {
@@ -38,18 +38,20 @@
   line-height: 1.8;
   color: #555;
   text-align: justify;
-  width: 70%; 
+  width: 100%; 
 }
 
 .skills-container {
   display: flex;
-  flex-direction: column;
-  padding: 10px;
-  width: auto; /* Automatically adjusts to the content */
+  flex-wrap: wrap; /* Allow the skills to wrap */
+  gap: 30px; /* Space between categories */
+  justify-content: left;
+  width: 70%;
 }
 
 .skill-category {
-  margin-bottom: 20px;
+  width: 45%; /* Two categories per row */
+  margin-bottom: 30px;
 }
 
 .skill-category-name {
