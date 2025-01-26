@@ -1,37 +1,77 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getProjectById } from "../../api/Api.jsx";
+import { getProjectById, getProjectImageById } from "../../api/Api.jsx";
 import "./ProjectDetails.css";
 
 const ProjectDetails = () => {
-  const { projectId } = useParams(); // Extract projectId from URL
+  const { projectId } = useParams();
   const [project, setProject] = useState(null);
+  const [projectImage, setProjectImage] = useState(null);
 
   useEffect(() => {
     const fetchProjectData = async () => {
       try {
-        const projectData = await getProjectById(projectId); // Fetch project by ID
+        const projectData = await getProjectById(projectId);
         setProject(projectData);
-        console.log("Project data:", projectData);
+
+        if (projectData.imageId) {
+          const imageData = await getProjectImageById(projectData.imageId);
+          setProjectImage(imageData);
+        }
       } catch (error) {
         console.error("Error fetching project data:", error);
       }
     };
 
     fetchProjectData();
-  }, [projectId]); // Re-fetch data if projectId changes
+  }, [projectId]);
 
   if (!project) {
     return <div>Loading...</div>;
   }
 
+  const formatDescription = (description) => {
+    return description.split("\n").map((line, index) => (
+      <span key={index}>
+        {line}
+        <br />
+      </span>
+    ));
+  };
+
   return (
     <div className="project-details-container">
       <h2 className="project-title">{project.title}</h2>
-      <p className="project-description">{project.description}</p>
-      <p className="project-techstack">Tech Stack: {project.techStack}</p>
+
+      <div className="project-main-content">
+        <div className="project-description-container">
+          <div className="project-description">
+            {formatDescription(project.description)}
+          </div>
+        </div>
+
+        {projectImage && (
+          <div className="project-image-container">
+            <img
+              src={`data:image/jpeg;base64,${projectImage}`}
+              alt="Project"
+              className="project-image"
+            />
+          </div>
+        )}
+      </div>
+
+      <h3 className="tech-stack-title">Technologies and Tools Used</h3>
+      <div className="project-tech-cards-container">
+        {project.techStack.split(",").map((tech, index) => (
+          <div key={index} className="tech-card">
+            <h3>{tech.trim()}</h3>
+          </div>
+        ))}
+      </div>
+
       {project.repoUrl && (
-        <a href={project.repoUrl} target="_blank" rel="noopener noreferrer">
+        <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" className="project-repo-link">
           View Repository
         </a>
       )}
