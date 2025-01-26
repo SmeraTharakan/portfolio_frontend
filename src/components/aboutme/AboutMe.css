@@ -1,0 +1,25 @@
+
+.about-me-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 70px 250px;
+  background-color: #ffffff;
+  height: 900px;
+  text-align: justify;
+}
+
+.about-me-container h2 {
+  font-size: 2.5rem;
+  color: #28a745; 
+  margin-bottom: 20px;
+}
+
+.about-me-container p {
+  font-size: 1.2rem;
+  color: #555; 
+  line-height: 1.6;
+  max-width: 60%;
+}
+
+

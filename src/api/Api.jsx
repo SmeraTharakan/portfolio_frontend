@@ -61,6 +61,7 @@ export const getProjectImageById = async (imageId) => {
 export const getAllSkills = async () => {
   try {
     const response = await api.get("/skills");
+    console.log(response.data);
     return response.data;
   } catch (error) {
     console.error("Error fetching skills:", error);
@@ -80,10 +81,8 @@ export const getAllEducation = async () => {
 
 export const getProfilePicture = async (userId) => {
     try {
-      const response = await api.get(`/user/${userId}/profile`, { responseType: 'arraybuffer' });
-      const base64ProfilePicture = Buffer.from(response.data, 'binary').toString('base64');
-      console.log(base64ProfilePicture);
-      return `data:image/jpeg;base64,${base64ProfilePicture}`;
+      const response = await api.get(`/user/${userId}/profile`, { responseType: "text" });
+      return response.data; 
     } catch (error) {
       console.error("Error fetching profile picture:", error);
       throw error;

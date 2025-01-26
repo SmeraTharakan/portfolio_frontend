@@ -1,51 +1,49 @@
-
+/* Navbar styles */
 .navbar {
-  width: 100%;
-  background-color: #444; 
-  padding: 20px 20px;
-  position: fixed; 
-  top: 0;
-  z-index: 1000;
-  box-sizing: border-box;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  background-color: #333; /* Darker background for the navbar */
+  padding: 0 10px; 
 }
 
-.navbar-container {
-  display: flex;
-  justify-content: center; 
-  align-items: center;
-}
-
-.navbar-logo {
-  font-size: 1.5rem;
+.navbar-brand {
   color: white;
-  text-decoration: none;
+  font-size: 1.6rem;
   font-weight: bold;
-  margin-right: auto; 
+  margin-right: 30px; /* Space between name and links */
 }
 
-.navbar-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
+.first-name {
+  color: #28a745; /* Green color for first name */
 }
 
-.navbar-links li {
-  display: inline-block;
+.last-name {
+  color: #6a5acd; /* Purple color for last name */
 }
 
-.navbar-links a {
-  text-decoration: none;
-  color: white;
-  font-size: 1rem;
-  padding: 14px 20px;
-  text-align: center;
-  transition: background-color 0.3s;
+.navbar-nav {
+  flex-direction: row;
 }
 
-.navbar-links a:hover {
-  background-color: #555; 
-  border-radius: 5px; 
+.nav-item .nav-link {
+  color: #fff;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-item .nav-link:hover {
+  transform: scale(1.1); /* Scale the link when hovered */
+  color: #28a745; /* Green color on hover */
+}
+/* Make the active link stand out */
+.navbar-nav .nav-item .nav-link.active {
+  color: #6a5acd !important; /* Ensure green color when active */
+  font-weight: bold;
+}
+
+
+.navbar-toggler-icon {
+  filter: brightness(0.5); /* Slightly dim the toggler icon */
+}
+
+.navbar-nav .nav-item {
+  margin-left: 30px; /* Spacing between nav items */
 }

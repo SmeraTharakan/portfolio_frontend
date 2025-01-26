@@ -1,74 +1,73 @@
-import React, { useEffect, useState } from 'react';
-import './Home.css'; 
-import { getUser, getProfilePicture } from '../../api/Api.jsx'; 
-import defaultProfile from '../../assets/profile.jpg'; 
+import React, { useEffect, useState } from "react";
+import "./Home.css";
+import { Typewriter } from "react-simple-typewriter";
+import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
+import { getUser, getProfilePicture } from "../../api/Api.jsx";
 
 const Home = () => {
   const [user, setUser] = useState(null);
-  const [skills, setSkills] = useState({});
-  const [profilePicture, setProfilePicture] = useState(null); // State for profile picture
+  const [profilePicture, setProfilePicture] = useState(null);
+  const [typedText, setTypedText] = useState("");
+
+  useEffect(() => {
+    setTypedText("Associate Software Developer");
+  }, []);
 
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const userId = 1; // Hardcoded for now, replace with dynamic ID if needed
+        const userId = 1; // Example user ID, replace with dynamic logic if needed
         const userData = await getUser(userId);
         setUser(userData);
 
-        // Fetch the profile picture after user data
         const picture = await getProfilePicture(userId);
-        setProfilePicture(picture); // Set the profile picture
-
-        setSkills({
-          "Programming Languages": userData.programmingLanguages || [],
-          "Web Development": userData.webDevelopment || [],
-          Databases: userData.databases || [],
-          Frameworks: userData.frameworks || [],
-        });
+        setProfilePicture(picture);
       } catch (error) {
-        console.error('Error fetching user data:', error);
+        console.error("Error fetching user data:", error);
       }
     };
 
     fetchUserData();
   }, []);
 
-  return (
-    <div className="home-page">
-      <header className="header">
-        <div className="intro">
-          <h1 className="name">Hi, I'm {user?.name || 'Loading...'}</h1>
-          <p className="bio">
-            {user?.bio ||
-              'Passionate and motivated software developer currently working as an Associate Software Developer.'}
-          </p>
-        </div>
-        <div className="profile">
-          <img
-            src={profilePicture ? `data:image/jpeg;base64,${profilePicture}` : defaultProfile}
-            alt="Profile"
-            className="profile-pic"
-          />
-        </div>
-      </header>
+  if (!user || !profilePicture) {
+    return <div>Loading...</div>;
+  }
 
-      <section className="skills-section">
-        <h2>Skills</h2>
-        <div className="skills">
-          {Object.keys(skills).map((category) => (
-            <div key={category} className="skills-card">
-              <h3 className="skills-category-title">{category}</h3>
-              <ul className="skills-list">
-                {skills[category].map((skill) => (
-                  <li key={skill} className="skill-item">
-                    {skill}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+  return (
+    <div id="home" className="home-container">
+      <div className="home-text">
+        <h1 className="greeting">
+          Hi, I'm <span className="name">{user.name}</span>
+        </h1>
+        <h2 className="role">
+          <Typewriter words={["Associate Software Developer"]} loop={0} cursor color="#28a745" />
+        </h2>
+        <p className="intro">
+          I am an Associate Software Developer currently working with Tarento Technologies, focusing on building scalable and efficient software solutions.
+        </p>
+        <div className="social-icons">
+          <a href={user.linkedinUrl} target="_blank" rel="noopener noreferrer">
+            <FaLinkedin />
+          </a>
+          <a href={user.githubUrl} target="_blank" rel="noopener noreferrer">
+            <FaGithub />
+          </a>
+          <a href={`mailto:${user.email}`} target="_blank" rel="noopener noreferrer">
+            <FaEnvelope />
+          </a>
         </div>
-      </section>
+        <a href="path-to-resume" className="resume-link">
+          Download Resume
+        </a>
+      </div>
+      <div className="home-image">
+        <img
+          src={`data:image/jpeg;base64,${profilePicture}`}
+          alt="Smera Tharakan"
+          className="profile-img"
+        />
+      </div>
     </div>
   );
 };
