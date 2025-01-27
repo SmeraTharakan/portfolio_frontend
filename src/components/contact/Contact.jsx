@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { sendMessage } from "../../api/Api"; // Assuming you create this API call to POST contact messages
-import "./Contact.css"
+import "./Contact.css";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -11,15 +11,25 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Send the contact form data to the backend API
     try {
+      // Send the contact form data to the backend API
       await sendMessage({ name, email, message });
       setSuccessMessage("Your message has been sent successfully!");
       setName("");
       setEmail("");
       setMessage("");
+
+      // Automatically clear the success message after 3 seconds
+      setTimeout(() => {
+        setSuccessMessage("");
+      }, 3000);
     } catch (error) {
       setSuccessMessage("Error sending message. Please try again.");
+
+      // Clear the error message after 3 seconds
+      setTimeout(() => {
+        setSuccessMessage("");
+      }, 3000);
     }
   };
 

@@ -1,13 +1,12 @@
 .projects-container {
   padding: 70px 250px;
   background-color: #ffffff;
-  height: 908px;
+  height: 800px;
 }
 
 .projects-title {
   font-size: 2.5rem;
   color: #6a5acd;
-  margin-bottom: 50px;
   text-align: center;
 }
 
@@ -19,17 +18,6 @@
   align-items: center;
   overflow-x: auto;
   height: 670px;
-}
-
-.project-card {
-  background-color: #ffffff;
-  width: 500px; /* Set width for uniform card sizes */
-  height: 400px; /* Set height for uniform card sizes */
-  padding: 60px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .project-card:hover {
@@ -56,33 +44,8 @@
   height: auto;
 }
 
-/* Base Styles */
-.projects-container {
-  padding: 70px 250px;
-  background-color: #f9f9f9;
-  height: auto; /* Allow height to adjust dynamically */
-}
-
-.projects-title {
-  font-size: 2.5rem;
-  color: #6a5acd;
-  margin-bottom: 50px;
-  text-align: center;
-}
-
-.projects-cards-container {
-  display: flex;
-  flex-wrap: nowrap; /* Keep cards in a single row */
-  gap: 60px;
-  justify-content: center;
-  align-items: center;
-  overflow-x: auto; /* Enable horizontal scrolling for smaller screens */
-  height: auto; /* Allow dynamic height */
-  padding-bottom: 20px; /* Add spacing below cards */
-}
-
 .project-card {
-  background-color: #ffffff;
+  background-color: #f8f8f8;
   width: 500px; /* Uniform card sizes */
   height: 400px;
   padding: 40px;
@@ -92,29 +55,6 @@
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.project-title {
-  font-size: 1.8rem;
-  color: #28a745;
-  margin-bottom: 20px;
-}
-
-.project-brief {
-  font-size: 1rem;
-  color: #777;
-  line-height: 1.5;
-  height: 145px;
-  overflow: hidden;
-  text-align: justify;
-}
-
-.project-card:hover .project-brief {
-  height: auto;
-}
 
 /* Tablet Adjustments */
 @media screen and (max-width: 768px) {

@@ -3,6 +3,7 @@ import "./Home.css";
 import { Typewriter } from "react-simple-typewriter";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import { getUser, getProfilePicture } from "../../api/Api.jsx";
+import resume from '../../assets/smera_tharakan_resume.pdf'
 
 const Home = () => {
   const [user, setUser] = useState(null);
@@ -16,7 +17,7 @@ const Home = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const userId = 1; // Example user ID, replace with dynamic logic if needed
+        const userId = 1; 
         const userData = await getUser(userId);
         setUser(userData);
 
@@ -57,7 +58,7 @@ const Home = () => {
             <FaEnvelope />
           </a>
         </div>
-        <a href="path-to-resume" className="resume-link">
+        <a href={resume} className="resume-link">
           Download Resume
         </a>
       </div>

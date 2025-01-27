@@ -38,16 +38,6 @@ export const getProjectById = async (projectId) => {
   }
 };
 
-export const getAllProjectImages = async () => {
-  try {
-    const response = await api.get("/project-images");
-    return response.data;
-  } catch (error) {
-    console.error("Error fetching project images:", error);
-    throw error;
-  }
-};
-
 export const getProjectImageById = async (imageId) => {
   try {
     const response = await api.get(`/project-images/${imageId}`, { responseType: "text" });

@@ -100,13 +100,7 @@ textarea {
   font-family: 'Arial', sans-serif; /* Match font family */
 }
 
-/* Base Styles */
-.contact-container {
-  padding: 70px 250px;
-  background-color: #ffffff;
-  height: auto; /* Allow dynamic height */
-  margin: 0;
-}
+
 
 .contact-title {
   font-size: 2.5rem;
