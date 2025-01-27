@@ -84,3 +84,113 @@
     line-height: 1.5;
   }
   
+  /* Responsive adjustments for tablets and smaller screens */
+@media screen and (max-width: 768px) {
+  .education-timeline-container {
+    padding: 60px; /* Reduce padding for smaller screens */
+    height: auto; /* Allow height to adjust to content */
+    width: 800px;
+  }
+
+  .education-title {
+    font-size: 2rem; /* Slightly smaller title font size */
+    margin-bottom: 20px;
+  }
+
+  .timeline {
+    max-width: 100%; /* Allow the timeline to use full screen width */
+  }
+
+  .timeline-line {
+    left: 5%; /* Adjust timeline line position */
+  }
+
+  .timeline-item {
+    flex-direction: column; /* Stack year and content vertically */
+    align-items: flex-start; /* Align content to the left */
+    margin-bottom: 30px;
+  }
+
+  .timeline-circle {
+    left: 5%; /* Adjust circle position */
+    width: 15px; /* Reduce circle size */
+    height: 15px; /* Reduce circle size */
+  }
+
+  .timeline-content {
+    width: 90%; /* Use more width for content */
+    margin-left: 10%; /* Adjust left margin for better alignment */
+    padding: 15px; /* Adjust padding */
+    font-size: 0.9rem; /* Slightly smaller font size */
+  }
+
+  .timeline-year {
+    font-size: 1rem; /* Adjust year font size */
+    margin-bottom: 8px;
+    text-align: left;
+    margin-left: 70px;
+  }
+
+  .timeline-degree {
+    font-size: 1.3rem; /* Adjust degree font size */
+    margin-bottom: 8px;
+  }
+
+  .timeline-institute {
+    font-size: 1rem; /* Adjust institute font size */
+  }
+
+  .timeline-description {
+    font-size: 0.9rem; /* Adjust description font size */
+    line-height: 1.4; /* Adjust line height */
+  }
+}
+
+/* Further adjustments for mobile screens */
+@media screen and (max-width: 480px) {
+  .education-timeline-container {
+    padding: 40px; /* Further reduce padding for very small screens */
+    width: 500px;
+  }
+
+  .education-title {
+    font-size: 1.8rem; /* Smaller title font size */
+  }
+
+  .timeline-line {
+    left: 5%; /* Ensure line remains aligned */
+    width: 1px; /* Narrower line */
+  }
+
+  .timeline-circle {
+    left: 5%; /* Align circle with line */
+    width: 12px; /* Smaller circle */
+    height: 12px;
+  }
+
+  .timeline-content {
+    width: 80%; /* Use full width for content */
+    margin-left: 50px; /* Remove margin for better spacing */
+    padding: 10px; /* Reduce padding */
+    border-radius: 8px; /* Slightly smaller border radius */
+  }
+
+  .timeline-year {
+    font-size: 0.9rem; /* Smaller year font size */
+    margin-bottom: 5px;
+    margin-left: 50px;
+  }
+
+  .timeline-degree {
+    font-size: 1.2rem; /* Smaller degree font size */
+  }
+
+  .timeline-institute {
+    font-size: 0.9rem; /* Adjust institute font size */
+  }
+
+  .timeline-description {
+    font-size: 0.8rem; /* Further reduce description font size */
+    line-height: 1.3;
+  }
+}

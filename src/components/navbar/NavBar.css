@@ -1,7 +1,10 @@
 /* Navbar styles */
 .navbar {
   background-color: #333; /* Darker background for the navbar */
-  padding: 0 10px; 
+  padding: 0 10px;
+  width: 100%; /* Ensure the navbar takes the full width */
+  max-width: 100%; /* Prevents horizontal scrolling */
+  box-sizing: border-box; /* Includes padding in the width calculation */
 }
 
 .navbar-brand {
@@ -9,6 +12,8 @@
   font-size: 1.6rem;
   font-weight: bold;
   margin-right: 30px; /* Space between name and links */
+  display: flex;
+  justify-content: flex-end;
 }
 
 .first-name {
@@ -21,6 +26,9 @@
 
 .navbar-nav {
   flex-direction: row;
+  justify-content: space-between; /* Spread nav items evenly */
+  padding-left: 0;
+  margin-bottom: 0; /* Remove default margins */
 }
 
 .nav-item .nav-link {
@@ -32,13 +40,15 @@
 .nav-item .nav-link:hover {
   transform: scale(1.1); /* Scale the link when hovered */
   color: #28a745; /* Green color on hover */
+  cursor: pointer; /* Pointer cursor on hover */
 }
+
+
 /* Make the active link stand out */
 .navbar-nav .nav-item .nav-link.active {
   color: #6a5acd !important; /* Ensure green color when active */
   font-weight: bold;
 }
-
 
 .navbar-toggler-icon {
   filter: brightness(0.5); /* Slightly dim the toggler icon */
@@ -46,4 +56,62 @@
 
 .navbar-nav .nav-item {
   margin-left: 30px; /* Spacing between nav items */
+}
+
+/* Make the navbar responsive */
+@media (max-width: 992px) {
+  .navbar-nav {
+    flex-direction: column; /* Stack items vertically */
+    margin-top: 10px; /* Space between items */
+    align-items: center; /* Center-align items */
+    width: 100%; /* Make sure it fits the screen width */
+  }
+
+  .navbar-nav .nav-item {
+    margin-left: 0; /* Remove left margin on smaller screens */
+    margin-bottom: 15px; /* Add space between vertical nav items */
+  }
+
+  .navbar-brand {
+    margin-right: 0; /* Remove right margin for better mobile layout */
+  }
+
+  /* Ensure the navbar collapses into hamburger menu on smaller screens */
+  .navbar-collapse {
+    width: 100%; /* Ensure collapse takes full width */
+  }
+
+  .navbar-toggler {
+    width: auto; /* Make sure the toggler icon is properly aligned */
+  }
+}
+
+/* Mobile navbar styles */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0 5px; /* Reduce padding on mobile screens */
+  }
+
+  .navbar-brand {
+    font-size: 1.4rem; /* Smaller brand name for smaller screens */
+  }
+
+  .nav-item .nav-link {
+    font-size: 1rem; /* Adjust font size of links */
+  }
+
+  .navbar-nav {
+    flex-direction: column; /* Ensure navbar items stack vertically */
+    margin-top: 10px;
+    align-items: center; /* Center items */
+  }
+
+  .navbar-nav .nav-item {
+    margin-left: 0; /* Remove left margin on mobile */
+    margin-bottom: 10px; /* Space between items */
+  }
+
+  .navbar-toggler-icon {
+    font-size: 1.5rem; /* Slightly larger icon for easier tapping */
+  }
 }

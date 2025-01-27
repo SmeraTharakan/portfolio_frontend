@@ -1,6 +1,6 @@
 .contact-container {
   padding: 70px 250px;
-  background-color: #ffffff;
+  background-color: #f4f4f9;
   height: 908px;
   margin: 0;
 }
@@ -98,4 +98,160 @@ textarea {
   font-weight: bold;
   text-align: center;
   font-family: 'Arial', sans-serif; /* Match font family */
+}
+
+/* Base Styles */
+.contact-container {
+  padding: 70px 250px;
+  background-color: #ffffff;
+  height: auto; /* Allow dynamic height */
+  margin: 0;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  color: #6a5acd; /* Purple color */
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.connect-with-me-title {
+  font-size: 1.8rem;
+  color: #28a745; /* Green color */
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: left;
+  font-family: 'Arial', sans-serif;
+}
+
+.contact-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  text-align: left;
+  margin-bottom: 30px;
+  font-family: 'Arial', sans-serif;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+label {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  background-color: #f9f9f9;
+  font-family: 'Arial', sans-serif;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #6a5acd; /* Purple focus border */
+  box-shadow: 0 0 5px rgba(106, 92, 205, 0.5); /* Purple glow on focus */
+}
+
+textarea {
+  resize: none;
+  height: 120px;
+}
+
+.submit-button {
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  color: #fff;
+  background-color: #28a745; /* Green button */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 200px;
+  align-self: flex-start;
+  font-family: 'Arial', sans-serif;
+}
+
+.submit-button:hover {
+  background-color: #5b4bb5; /* Darker purple on hover */
+}
+
+.success-message {
+  margin-top: 20px;
+  color: #28a745;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Tablet Adjustments */
+@media screen and (max-width: 768px) {
+  .contact-container {
+    padding: 60px; /* Reduce padding */
+    width: 800px;
+  }
+
+  .contact-title {
+    font-size: 2rem; /* Slightly smaller title */
+  }
+
+  .connect-with-me-title {
+    font-size: 1.6rem; /* Adjust title size */
+  }
+
+  .contact-description {
+    font-size: 1rem; /* Slightly smaller font */
+  }
+
+  .submit-button {
+    width: 100%; /* Full-width button for better usability */
+  }
+}
+
+/* Mobile Adjustments */
+@media screen and (max-width: 480px) {
+  .contact-container {
+    padding: 40px; /* Compact padding for small screens */
+    width: 500px;
+  }
+
+  .contact-title {
+    font-size: 1.8rem; /* Smaller font size for the title */
+  }
+
+  .connect-with-me-title {
+    font-size: 1.4rem; /* Adjust title size further */
+  }
+
+  .contact-description {
+    font-size: 0.9rem; /* Reduce font size for readability */
+  }
+
+  .contact-form {
+    gap: 15px; /* Reduce spacing between form fields */
+  }
+
+  .submit-button {
+    font-size: 1rem; /* Adjust button text size */
+    padding: 10px 20px;
+  }
 }

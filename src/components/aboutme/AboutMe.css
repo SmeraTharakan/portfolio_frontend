@@ -81,3 +81,69 @@
   transform: translateY(-5px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
+
+/* Responsive adjustments for tablets and smaller screens */
+@media screen and (max-width: 768px) {
+  .about-me-container {
+    padding: 60px; /* Reduce padding for smaller screens */
+    height: auto; /* Let height adjust to content */
+    width: 800px;
+  }
+
+  .about-me-content {
+    align-items: flex-start; /* Align content to the start */
+  }
+
+  .about-me-left,
+  .about-me-right {
+    width: 100%; /* Full width for both sections */
+    margin-bottom: 20px; /* Add spacing between sections */
+  }
+
+  .skills-container {
+    width: 100%; /* Use full width for skills */
+    justify-content: center; /* Center-align skills */
+  }
+
+  .skill-category {
+    width: 100%; /* Stack categories vertically */
+    margin-bottom: 20px;
+  }
+}
+
+/* Further adjustments for mobile screens */
+@media screen and (max-width: 480px) {
+  .about-me-container {
+    padding: 40px; /* Reduce padding further for very small screens */
+    width: 500px;
+  }
+
+  .about-me-title {
+    font-size: 1.8rem; /* Adjust title font size */
+  }
+
+  .about-me-heading {
+    font-size: 1.5rem; /* Adjust heading font size */
+    margin-top: 40px; /* Adjust spacing */
+    text-align: center; /* Center-align heading */
+  }
+
+  .profile-summary {
+    font-size: 0.9rem; /* Adjust summary font size */
+    line-height: 1.5; /* Adjust line height */
+    text-align: left; /* Left-align text for better readability */
+  }
+
+  .skills-container {
+    gap: 20px; /* Reduce gap between skill cards */
+  }
+
+  .skill-category {
+    width: 100%; /* Stack skill categories vertically */
+  }
+
+  .skill-card {
+    font-size: 0.9rem; /* Adjust skill card font size */
+    padding: 8px 15px; /* Adjust padding */
+  }
+}

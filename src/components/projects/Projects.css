@@ -1,6 +1,6 @@
 .projects-container {
   padding: 70px 250px;
-  background-color: #f9f9f9;
+  background-color: #ffffff;
   height: 908px;
 }
 
@@ -54,4 +54,127 @@
 
 .project-card:hover .project-brief {
   height: auto;
+}
+
+/* Base Styles */
+.projects-container {
+  padding: 70px 250px;
+  background-color: #f9f9f9;
+  height: auto; /* Allow height to adjust dynamically */
+}
+
+.projects-title {
+  font-size: 2.5rem;
+  color: #6a5acd;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.projects-cards-container {
+  display: flex;
+  flex-wrap: nowrap; /* Keep cards in a single row */
+  gap: 60px;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto; /* Enable horizontal scrolling for smaller screens */
+  height: auto; /* Allow dynamic height */
+  padding-bottom: 20px; /* Add spacing below cards */
+}
+
+.project-card {
+  background-color: #ffffff;
+  width: 500px; /* Uniform card sizes */
+  height: 400px;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project-title {
+  font-size: 1.8rem;
+  color: #28a745;
+  margin-bottom: 20px;
+}
+
+.project-brief {
+  font-size: 1rem;
+  color: #777;
+  line-height: 1.5;
+  height: 145px;
+  overflow: hidden;
+  text-align: justify;
+}
+
+.project-card:hover .project-brief {
+  height: auto;
+}
+
+/* Tablet Adjustments */
+@media screen and (max-width: 768px) {
+  .projects-container {
+    padding: 60px; /* Reduce padding for smaller screens */
+    width: 800px;
+  }
+
+  .projects-title {
+    font-size: 2rem; /* Slightly smaller title */
+  }
+
+  .projects-cards-container {
+    gap: 40px; /* Reduce spacing between cards */
+  }
+
+  .project-card {
+    width: 400px; /* Adjust card width */
+    height: 350px; /* Adjust card height */
+    padding: 30px; /* Adjust padding inside the cards */
+  }
+
+  .project-title {
+    font-size: 1.5rem; /* Slightly smaller title */
+  }
+
+  .project-brief {
+    font-size: 0.9rem; /* Slightly smaller font for the brief */
+  }
+}
+
+/* Mobile Adjustments */
+@media screen and (max-width: 480px) {
+  .projects-container {
+    padding: 40px; /* Further reduce padding for mobile screens */
+    width: 500px;
+  }
+
+  .projects-title {
+    font-size: 1.8rem; /* Smaller title size */
+  }
+
+  .projects-cards-container {
+    gap: 20px; /* Reduce spacing between cards */
+    flex-wrap: wrap; /* Allow cards to wrap to the next row */
+    overflow-x: hidden; /* Disable horizontal scrolling */
+  }
+
+  .project-card {
+    width: 100%; /* Full width for smaller screens */
+    height: auto; /* Allow dynamic height */
+    padding: 20px; /* Reduce padding */
+  }
+
+  .project-title {
+    font-size: 1.3rem; /* Smaller font for the title */
+  }
+
+  .project-brief {
+    font-size: 0.85rem; /* Reduce font size for the brief */
+    height: auto; /* Allow full height */
+  }
 }
