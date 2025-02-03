@@ -105,4 +105,38 @@ export const getMessages = async () => {
       throw error;
     }
   };
+
+export const login = async (username, password) => {
+    try {
+        const response = await api.post("/auth/login", null, {
+            params: {
+                username: username,
+                password: password
+            }
+        });
+
+        if (response.status === 200 && response.data === "Login successful") {
+          localStorage.setItem('auth', 'true');  
+          localStorage.setItem('username', username); 
+
+          return { success: true, message: "Login successful" };
+      } else {
+          return { success: false, message: "Invalid username or password" };
+      }
+      } catch (error) {
+          console.error("Login error: ", error);
+          return { success: false, message: "Invalid username or password" };
+      }
+};
+
+
+export const isAuthenticated = () => {
+  return localStorage.getItem('auth') === 'true'; 
+};
+
+
+export const logout = () => {
+    localStorage.removeItem('auth');
+    window.location.href = "/login"; 
+};
 export default api;
