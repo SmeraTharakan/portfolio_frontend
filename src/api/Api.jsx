@@ -10,8 +10,8 @@ const api = axios.create({
 export const getUser = async (userId) => {
   try {
     const response = await api.get(`/user/${userId}`);
-    console.log(response.data);
-    return response.data;
+    console.log("users:",response.data.response);
+    return response.data.response;
   } catch (error) {
     console.error("Error fetching user:", error);
     throw error;
@@ -70,14 +70,22 @@ export const getAllEducation = async () => {
 };
 
 export const getProfilePicture = async (userId) => {
-    try {
-      const response = await api.get(`/user/${userId}/profile`, { responseType: "text" });
-      return response.data; 
-    } catch (error) {
-      console.error("Error fetching profile picture:", error);
-      throw error;
+  try {
+    const response = await api.get(`/user/${userId}/profile`, { responseType: "json" });
+    
+    if (response.data.statusCode === 200) {
+      console.log("Profile Picture (Base64):", response.data.response);
+      return response.data.response; 
+    } else {
+      console.error("Failed to fetch profile picture:", response.data.message);
+      return null;
     }
-  };
+  } catch (error) {
+    console.error("Error fetching profile picture:", error);
+    throw error;
+  }
+};
+
 export const sendMessage = async (messageData) => {
     try {
       const response = await api.post("/contact", messageData);

@@ -9,7 +9,7 @@ const AboutMe = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const userId = 1;
+        const userId = "8b9698fc-a489-4251-b644-2560c3a53fac";
         const userData = await getUser(userId);
         setUser(userData);
         console.log("users", user);

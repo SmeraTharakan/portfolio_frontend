@@ -1,3 +1,4 @@
+/* Base Styles */
 .projects-container {
   padding: 70px 250px;
   background-color: #ffffff;
@@ -55,8 +56,67 @@
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
+/* Adjustments for 1200px screens (large desktops or small laptops) */
+@media screen and (max-width: 1200px) {
+  .projects-container {
+    padding: 60px; /* Reduce padding */
+    width: 1100px; /* Adjust width for larger screens */
+  }
 
-/* Tablet Adjustments */
+  .projects-title {
+    font-size: 2.2rem; /* Slightly smaller title */
+  }
+
+  .projects-cards-container {
+    gap: 50px; /* Reduce spacing between cards */
+  }
+
+  .project-card {
+    width: 475px; /* Adjust card width */
+    height: 375px; /* Adjust card height */
+    padding: 35px; /* Adjust padding inside the cards */
+  }
+
+  .project-title {
+    font-size: 1.7rem; /* Slightly smaller title */
+  }
+
+  .project-brief {
+    font-size: 0.98rem; /* Slightly smaller font for the brief */
+  }
+}
+
+/* Adjustments for 992px screens */
+@media screen and (max-width: 992px) {
+  .projects-container {
+    padding: 60px; /* Reduce padding */
+    width: 900px; /* Adjust width */
+  }
+
+  .projects-title {
+    font-size: 2.2rem; /* Slightly smaller title */
+  }
+
+  .projects-cards-container {
+    gap: 50px; /* Reduce spacing between cards */
+  }
+
+  .project-card {
+    width: 450px; /* Adjust card width */
+    height: 375px; /* Adjust card height */
+    padding: 35px; /* Adjust padding inside the cards */
+  }
+
+  .project-title {
+    font-size: 1.6rem; /* Slightly smaller title */
+  }
+
+  .project-brief {
+    font-size: 0.95rem; /* Slightly smaller font for the brief */
+  }
+}
+
+/* Tablet Adjustments (max-width: 768px) */
 @media screen and (max-width: 768px) {
   .projects-container {
     padding: 60px; /* Reduce padding for smaller screens */
@@ -86,7 +146,7 @@
   }
 }
 
-/* Mobile Adjustments */
+/* Mobile Adjustments (max-width: 480px) */
 @media screen and (max-width: 480px) {
   .projects-container {
     padding: 40px; /* Further reduce padding for mobile screens */

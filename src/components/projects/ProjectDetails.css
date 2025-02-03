@@ -1,108 +1,3 @@
-.project-details-container {
-  padding: 70px 250px;
-  margin: 0 auto;
-  background-color: #f4f4f9;
-  margin-top: 57px;
-  min-height: 909px;
-}
-
-.projectd-title {
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: #6a5acd;
-  margin-bottom: 20px;
-}
-
-.project-main-content {
-  display: flex;
-  gap: 30px; /* Space between description and image */
-  flex-wrap: wrap; /* Allow content to wrap if necessary */
-  margin-top: 40px;
-}
-
-.project-description-container {
-  flex: 1; /* Ensure description takes the remaining space */
-  color: #333;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  text-align: justify; /* Justify text for better alignment */
-  padding: 10px 0;
-}
-
-.project-image-container {
-  flex-shrink: 0;
-  width: 35%; /* Image takes fixed space */
-  max-width: 500px; /* Optional max-width */
-}
-
-.project-image {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.tech-stack-title {
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: #333;
-  margin-top: 40px;
-}
-
-.project-tech-cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin-top: 20px;
-}
-
-.tech-card {
-  width: 18%;
-  min-width: 150px;
-  padding: 15px;
-  background-color: #ffffff;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.tech-card h3 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.tech-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
-
-.tech-card:nth-child(odd) {
-  background-color: #f9f9f9;
-}
-
-.tech-card:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-.project-repo-link {
-  display: inline-block;
-  margin-top: 60px;
-  padding: 10px 20px;
-  background-color: #28a745;
-  color: white;
-  font-weight: bold;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.project-repo-link:hover {
-  background-color: #6a5acd;
-}
-
 /* Base Styles */
 .project-details-container {
   padding: 70px 250px;
@@ -174,7 +69,7 @@
 }
 
 .tech-card h3 {
-  font-size: 1.1rem;
+  font-size: 1.1rem; /* Default font size */
   font-weight: 600;
   color: #333;
   margin-bottom: 10px;
@@ -209,70 +104,160 @@
   background-color: #6a5acd;
 }
 
-/* Tablet Adjustments */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1200px) {
   .project-details-container {
-    padding: 60px; /* Reduce padding for smaller screens */
-    width: 800px;
+    padding: 60px 120px; /* Adjust padding for larger screens */
   }
 
   .projectd-title {
-    font-size: 2rem; /* Reduce font size for title */
+    font-size: 2.2rem; /* Slightly smaller title font size */
   }
 
   .project-main-content {
-    flex-direction: column; /* Stack description and image */
+    flex-direction: column;
+    gap: 25px; /* Adjust gap between content sections */
+  }
+
+  .project-image-container {
+    width: 50%; /* Adjust width for image */
+    max-width: 450px; /* Ensure image doesn't stretch too much */
+  }
+
+  .project-description-container {
+    font-size: 1.1rem; /* Adjust font size for readability */
+  }
+
+  .tech-stack-title {
+    font-size: 1.5rem; /* Slightly smaller tech stack title */
+  }
+
+  .tech-card {
+    width: 22%; /* Adjust card width for better alignment */
+    min-width: 140px;
+  }
+
+  .project-repo-link {
+    width: 100%;
+    text-align: center;
+  }
+
+  .tech-card h3 {
+    font-size: 1.05rem; /* Slightly smaller font for tech card title */
+  }
+}
+
+/* Tablet (<=992px) */
+@media screen and (max-width: 992px) {
+  .project-details-container {
+    padding: 60px;
+  }
+
+  .projectd-title {
+    font-size: 2rem;
+  }
+
+  .project-main-content {
+    flex-direction: column;
     gap: 20px;
   }
 
   .project-image-container {
-    width: 100%; /* Make image take full width */
+    width: 100%;
   }
 
   .project-description-container {
-    font-size: 1rem; /* Adjust font size for description */
+    font-size: 1rem;
   }
 
   .tech-stack-title {
-    font-size: 1.4rem; /* Adjust font size for stack title */
+    font-size: 1.4rem;
   }
 
   .tech-card {
-    width: 30%; /* Allow more cards per row */
-  }
-}
-
-/* Mobile Adjustments */
-@media screen and (max-width: 480px) {
-  .project-details-container {
-    padding: 40px; /* Compact padding for small screens */
-    width: 500px;
-  }
-
-  .projectd-title {
-    font-size: 1.8rem; /* Smaller title font */
-  }
-
-  .project-main-content {
-    gap: 15px;
-  }
-
-  .project-description-container {
-    font-size: 0.9rem; /* Reduce font size for better readability */
-  }
-
-  .project-image-container {
-    width: 100%; /* Full width for image */
-  }
-
-  .tech-card {
-    width: 45%; /* Two cards per row */
-    min-width: 120px; /* Reduce minimum width */
+    width: 30%; /* Adjust cards to fit better */
   }
 
   .project-repo-link {
-    width: 100%; /* Full-width button for better usability */
-    text-align: center; /* Center-align text */
+    width: 100%;
+    text-align: center;
+  }
+  .tech-card h3 {
+    font-size: 1rem; /* Slightly smaller font size for tablet */
+  }
+}
+
+/* Mobile (<=768px) */
+@media screen and (max-width: 768px) {
+  .project-details-container {
+    padding: 40px;
+    width: 100%;
+  }
+
+  .projectd-title {
+    font-size: 1.8rem;
+  }
+
+  .project-main-content {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .project-image-container {
+    width: 100%;
+  }
+
+  .project-description-container {
+    font-size: 0.9rem;
+  }
+
+  .tech-card {
+    width: 45%;
+    min-width: 120px;
+  }
+  .tech-card h3 {
+    font-size: 0.9rem; /* Smaller font size for mobile */
+  }
+
+  .project-repo-link {
+    width: 100%;
     font-size: 1rem;
   }
 }
+
+/* Small Mobile (<=480px) */
+@media screen and (max-width: 480px) {
+  .project-details-container {
+    padding: 30px;
+    width: 100%;
+  }
+
+  .projectd-title {
+    font-size: 1.6rem;
+  }
+
+  .project-main-content {
+    gap: 10px;
+  }
+
+  .project-description-container {
+    font-size: 0.8rem;
+  }
+
+  .project-image-container {
+    width: 100%;
+  }
+
+  .tech-card {
+    width: 45%;
+  }
+
+  .project-repo-link {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  .tech-card h3 {
+    font-size: 0.8rem; /* Even smaller font size for small mobile */
+  }
+}
+/* For Large Tablets and Small Desktops (<=1200px) */

@@ -1,9 +1,11 @@
 .about-me-container {
-  padding: 70px 250px;
+  padding: 70px 15%; /* Adjust padding for responsiveness */
+  width: 100%; /* Ensure it takes full width */
   background-color: #ffffff;
-  height: 908px;
+  height: auto;
   margin: 0;
 }
+
 
 .about-me-title {
   font-size: 2.5rem;
@@ -38,8 +40,10 @@
   line-height: 1.8;
   color: #555;
   text-align: justify;
-  width: 100%; 
+  width: 100%;
+  margin: 0 auto; /* Center the paragraph */
 }
+
 
 .skills-container {
   display: flex;
@@ -82,7 +86,96 @@
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive adjustments for tablets and smaller screens */
+@media screen and (max-width: 1200px) {
+  .about-me-container {
+    padding: 60px 120px; /* Adjust padding for larger screens */
+  }
+
+  .about-me-title {
+    font-size: 2.3rem; /* Slightly smaller title font size */
+    margin-bottom: 40px; /* Adjusted margin */
+  }
+
+  .about-me-content {
+    align-items: flex-start; /* Align content to the start */
+  }
+
+  .about-me-left,
+  .about-me-right {
+    width: 48%; /* Reduce width for better alignment */
+    margin-bottom: 30px; /* Add spacing between sections */
+  }
+
+  .about-me-heading {
+    font-size: 1.7rem; /* Slightly smaller heading font size */
+    margin-top: 70px; /* Adjust spacing */
+  }
+
+  .profile-summary {
+    font-size: 1.1rem; /* Adjust font size for better readability */
+    line-height: 1.7; /* Adjust line height for readability */
+    text-align: justify;
+    width: 1000px;
+  }
+
+  .skills-container {
+    width: 100%; /* Use full width for skills */
+    justify-content: center; /* Center-align skills */
+  }
+
+  .skill-category {
+    width: 45%; /* Maintain two categories per row */
+    margin-bottom: 25px; /* Reduce gap between skill categories */
+  }
+
+
+}
+
+/* Responsive adjustments for tablets and smaller screens (up to 992px) */
+@media screen and (max-width: 992px) {
+  .about-me-container {
+    padding: 50px 50px; /* Adjust padding for medium devices */
+    width: 900px; /* Full width on medium screens */
+  }
+
+  .about-me-title {
+    font-size: 2.2rem; /* Slightly smaller title font size */
+  }
+
+  .about-me-content {
+    align-items: flex-start; /* Align content to the start */
+  }
+
+  .about-me-left,
+  .about-me-right {
+    width: 100%; /* Full width for both sections */
+    margin-bottom: 20px; /* Add spacing between sections */
+  }
+
+  .about-me-heading {
+    font-size: 1.6rem; /* Adjust heading font size */
+    margin-top: 60px; /* Adjust spacing */
+  }
+
+  .profile-summary {
+    font-size: 1rem; /* Adjust font size for medium screens */
+    line-height: 1.6; /* Adjust line height for readability */
+    text-align: justify;
+    width: 800px;
+  }
+
+  .skills-container {
+    width: 100%; /* Full width for skills container */
+    justify-content: center; /* Center-align skills */
+  }
+
+  .skill-category {
+    width: 45%; /* Keep two categories per row */
+    margin-bottom: 25px; /* Reduce gap between skill categories */
+  }
+}
+
+/* Responsive adjustments for tablets and smaller screens (up to 768px) */
 @media screen and (max-width: 768px) {
   .about-me-container {
     padding: 60px; /* Reduce padding for smaller screens */
@@ -109,13 +202,20 @@
     width: 100%; /* Stack categories vertically */
     margin-bottom: 20px;
   }
+
+  .profile-summary {
+    font-size: 0.98rem; /* Slightly smaller font size for tablets */
+    line-height: 1.5; /* Slightly reduced line height */
+    text-align: justify;
+    width: 640px;
+  }
 }
 
-/* Further adjustments for mobile screens */
+/* Further adjustments for mobile screens (up to 480px) */
 @media screen and (max-width: 480px) {
   .about-me-container {
-    padding: 40px; /* Reduce padding further for very small screens */
-    width: 500px;
+    padding: 40px; /* Further reduce padding for very small screens */
+    width: 500px; /* Ensure full width on small screens */
   }
 
   .about-me-title {
@@ -129,9 +229,11 @@
   }
 
   .profile-summary {
-    font-size: 0.9rem; /* Adjust summary font size */
-    line-height: 1.5; /* Adjust line height */
-    text-align: left; /* Left-align text for better readability */
+    font-size: 0.9rem; /* Adjust for small screens */
+    line-height: 1.4; /* Tighten line height for small screens */
+    text-align: left; /* Align text to the left for small screens */
+    text-align: justify;
+    width: 410px;
   }
 
   .skills-container {
