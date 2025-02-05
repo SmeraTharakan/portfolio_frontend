@@ -57,6 +57,12 @@
   color: #6a5acd !important; /* Ensure green color when active */
   font-weight: bold;
 }
+/* Style for active nav link */
+.navbar-nav .nav-item .nav-link.active {
+  font-weight: bold; /* Makes the active link bold */
+  color: #ff9900; /* You can change the color of the active link */
+}
+
 
 .navbar-toggler-icon {
   filter: brightness(0.5); /* Slightly dim the toggler icon */

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getProjectById, getProjectImageById } from "../../api/Api.jsx";
 import "./ProjectDetails.css";
-import NavBar from "../navbar/NavBar"; // Import the NavBar
+import NavBar from "../navbar/NavBar";
 
 const ProjectDetails = () => {
   const { projectId } = useParams();
@@ -42,50 +42,43 @@ const ProjectDetails = () => {
 
   return (
     <div>
-      {/* Pass hideRightItems as true to hide right-side nav items */}
-      <NavBar hideRightItems={true} />
+    <NavBar hideRightItems={true} />
+    <div className="project-details-container">
+      <h2 className="projectd-title">{project.title}</h2>
 
-      <div className="project-details-container">
-        <h2 className="projectd-title">{project.title}</h2>
-
-        <div className="project-main-content">
-          <div className="project-description-container">
-            <div className="project-description">
-              {formatDescription(project.description)}
-            </div>
+      <div className="project-main-content">
+        <div className="project-description-container">
+          <div className="project-description">
+            {formatDescription(project.description)}
           </div>
-
-          {projectImage && (
-            <div className="project-image-container">
-              <img
-                src={`data:image/jpeg;base64,${projectImage}`}
-                alt="Project"
-                className="project-image"
-              />
-            </div>
-          )}
         </div>
 
-        <h3 className="tech-stack-title">Technologies and Tools Used</h3>
-        <div className="project-tech-cards-container">
-          {project.techStack.split(",").map((tech, index) => (
-            <div key={index} className="tech-card">
-              <h3>{tech.trim()}</h3>
-            </div>
-          ))}
-        </div>
-
-        {project.repoUrl && (
-          <a
-            href={project.repoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="project-repo-link"
-          >
-            View Repository
-          </a>
+        {projectImage && (
+          <div className="project-image-container">
+            <img
+              src={`data:image/jpeg;base64,${projectImage}`}
+              alt="Project"
+              className="project-image"
+            />
+          </div>
         )}
       </div>
+
+      <h3 className="tech-stack-title">Technologies and Tools Used</h3>
+      <div className="project-tech-cards-container">
+        {project.techStack.split(",").map((tech, index) => (
+          <div key={index} className="tech-card">
+            <h3>{tech.trim()}</h3>
+          </div>
+        ))}
+      </div>
+
+      {project.repoUrl && (
+        <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" className="project-repo-link">
+          View Repository
+        </a>
+      )}
+    </div>
     </div>
   );
 };
